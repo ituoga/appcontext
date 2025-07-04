@@ -7,7 +7,7 @@ package main
 
 import "github.com/ituoga/appcontext"
 
-var localeKey = appcontext.Key[string]{}
+var localeKey = &appcontext.Key[string]("localKey")
 
 func WithLocale(ctx context.Context, locale string) context.Context {
 	return appcontext.With(ctx, localeKey, locale)
